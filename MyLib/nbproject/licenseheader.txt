@@ -1,0 +1,7 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Kahlia Lepple (c) 2017
+<#if licenseLast??>
+${licenseLast}
+</#if>
