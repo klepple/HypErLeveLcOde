@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author ELYEB
  */
-public class CaesarCipherTest {
+public class SimpleSubstitutionCipherTest {
     
-    public CaesarCipherTest() {
+    public SimpleSubstitutionCipherTest() {
     }
     
     @BeforeClass
@@ -34,29 +34,29 @@ public class CaesarCipherTest {
     @After
     public void tearDown() {
     }
-
+    
     /**
-     * Test of encrypt method, of class CaesarCipher.
+     * Test of encrypt method, of class SimpleSubstitutionCipher.
      */
     @Test
     public void testEncrypt() {
         System.out.println("encrypt");
-        String plaintext = "The quick brown fox jumps over the lazy dog";
-        CaesarCipher instance = new CaesarCipher(5);
-        String expResult = "ymj vznhp gwtbs ktc ozrux tajw ymj qfed itl";
+        String plaintext = "defend the east wall of the castle";
+        SimpleSubstitutionCipher instance = new SimpleSubstitutionCipher("zebracdfghijklmnopqstuvwxy");
+        String expResult = "racalr sfa azqs vzjj mc sfa bzqsja";
         String result = instance.encrypt(plaintext);
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of decrypt method, of class CaesarCipher.
+     * Test of decrypt method, of class SimpleSubstitutionCipher.
      */
     @Test
     public void testDecrypt() {
         System.out.println("decrypt");
-        String ciphertext = "ftq cguow ndaiz raj vgybe ahqd ftq xmlk pas";
-        CaesarCipher instance = new CaesarCipher(12);
-        String expResult = "the quick brown fox jumps over the lazy dog";
+        String ciphertext = "liv vovtu ap jstaoz alp latv ls dco";
+        SimpleSubstitutionCipher instance = new SimpleSubstitutionCipher("yejwvmziaxbhtosqrdplckgnuf");
+        String expResult = "the enemy is coming its time to run";
         String result = instance.decrypt(ciphertext);
         assertEquals(expResult, result);
     }
