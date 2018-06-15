@@ -43,3 +43,11 @@ class CaesarCipher:
 class SimpleSubstitutionCipher:
     def __init__(self, key='abc'):
         self.key = key
+
+    def generate_cipher_alphabet(self):
+        cipher_alphabet = []
+        for i in range(len(self.key)):
+            char = self.key[i]
+            cipher_index = PLAIN_ALPHABET.index(char)
+            cipher_alphabet.__add__(cipher_index)
+        return cipher_alphabet
